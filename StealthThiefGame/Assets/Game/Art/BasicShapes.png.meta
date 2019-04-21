@@ -1,0 +1,891 @@
+fileFormatVersion: 2
+guid: 8d39dccbb1bca874087eaa3ede859a5f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2817493236792722656
+    second: Circle
+  - first:
+      213: -2150307517914310879
+    second: Circle_40px
+  - first:
+      213: -423936620066956337
+    second: Circle_20px
+  - first:
+      213: 8829517108280701025
+    second: Triangle
+  - first:
+      213: 893992769330778479
+    second: Triangle_40px
+  - first:
+      213: -439340586621577673
+    second: Triangle_20px
+  - first:
+      213: 9007178948967763367
+    second: Hex
+  - first:
+      213: 4600640370601339193
+    second: Hex_40px
+  - first:
+      213: 5932437067121808278
+    second: Square
+  - first:
+      213: -4707409918649925025
+    second: Square_r100
+  - first:
+      213: 6752699764158299
+    second: Square_r75
+  - first:
+      213: 2943893423336660382
+    second: Square_r50
+  - first:
+      213: 144308540544199810
+    second: Square_r25
+  - first:
+      213: -8244405613980159420
+    second: Square_r15
+  - first:
+      213: -4609154610044535599
+    second: DashedSquare_r20_20px
+  - first:
+      213: -7793215135245461433
+    second: Hex_20px
+  - first:
+      213: 3412604755762540630
+    second: Square_40px
+  - first:
+      213: 7861132846748424093
+    second: Square_r100_40px
+  - first:
+      213: 4642366728021456906
+    second: Square_r75_40px
+  - first:
+      213: -6593334623914314382
+    second: Square_r50_40px
+  - first:
+      213: -5606275655858787778
+    second: Square_r25_40px
+  - first:
+      213: 8859939105435873926
+    second: Square_r15_40px
+  - first:
+      213: -5985799754658513668
+    second: Triangle_r20
+  - first:
+      213: -6943937976581445690
+    second: Hex_r40
+  - first:
+      213: 4347255378572156155
+    second: Square_20px
+  - first:
+      213: -8017746061301548502
+    second: Square_r100_20px
+  - first:
+      213: 3612847775659787950
+    second: Square_r75_20px
+  - first:
+      213: 8585446626725173383
+    second: Square_r50_20px
+  - first:
+      213: 3526540563510858685
+    second: Square_r25_20px
+  - first:
+      213: 7839380650889511482
+    second: Square_r15_20px
+  - first:
+      213: 4905162782247949976
+    second: Triangle_r20_30px
+  - first:
+      213: -4640890109542372945
+    second: Hex_r40_40px
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 258
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Circle
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 774
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c21b1fd32e2a4b4bb1eb66bc7136c5e
+      internalID: 2817493236792722656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Circle_40px
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 771
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e09e4be52df5b0429588e278bfcc57c
+      internalID: -2150307517914310879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Circle_20px
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 771
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 351f5761820b6c244802707413ce267a
+      internalID: -423936620066956337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Triangle
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 771
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a51f8793e68408a4591853eb5c950396
+      internalID: 8829517108280701025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Triangle_40px
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 771
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b5c7ee67aebe604599cf2733c9c9340
+      internalID: 893992769330778479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Triangle_20px
+      rect:
+        serializedVersion: 2
+        x: 1283
+        y: 771
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3e8335e466cf5343b98725436b99f61
+      internalID: -439340586621577673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hex
+      rect:
+        serializedVersion: 2
+        x: 1539
+        y: 771
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f640d83e2f976b4abe74c553b81da1e
+      internalID: 9007178948967763367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hex_40px
+      rect:
+        serializedVersion: 2
+        x: 1795
+        y: 771
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef291149fa934a747b976563e6625ee1
+      internalID: 4600640370601339193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Square
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 515
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 359fd0f124555964281bf99a8af6b066
+      internalID: 5932437067121808278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Square_r100
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 515
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b9822c69aa4995418027b324d904641
+      internalID: -4707409918649925025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Square_r75
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 515
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 584abf4c98d61354cb583d489d89db7c
+      internalID: 6752699764158299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Square_r50
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 515
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cee558f76d96bc54ba4796b6c7f36a56
+      internalID: 2943893423336660382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Square_r25
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 515
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25fe0be4400a5814dace8bbdb5d3a3df
+      internalID: 144308540544199810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Square_r15
+      rect:
+        serializedVersion: 2
+        x: 1283
+        y: 515
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79a9a5275fd88064c82453a00bf54f95
+      internalID: -8244405613980159420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DashedSquare_r20_20px
+      rect:
+        serializedVersion: 2
+        x: 1539
+        y: 515
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17a0f6a7f66322e44a2e39b2f9b7f8ba
+      internalID: -4609154610044535599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hex_20px
+      rect:
+        serializedVersion: 2
+        x: 1795
+        y: 515
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 137a938ceebda8a46b7ad34b6fb4adcb
+      internalID: -7793215135245461433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Square_40px
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 259
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b965c78dd972a654a8a403931a052b56
+      internalID: 3412604755762540630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Square_r100_40px
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 259
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 422725fc0d9595c4592a8d4b290ac6d3
+      internalID: 7861132846748424093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Square_r75_40px
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 259
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3eb52821a0526549bb668a7eff9c8d2
+      internalID: 4642366728021456906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Square_r50_40px
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 259
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e13c7bd96d4b5d3439fde460bc4a4aad
+      internalID: -6593334623914314382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Square_r25_40px
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 259
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51ddf951cccd56c4ab02c9eed7f574ed
+      internalID: -5606275655858787778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Square_r15_40px
+      rect:
+        serializedVersion: 2
+        x: 1283
+        y: 259
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ec503c81b621194aa72c73b026fcfce
+      internalID: 8859939105435873926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Triangle_r20
+      rect:
+        serializedVersion: 2
+        x: 1539
+        y: 259
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b8e5516cd6cd584d811d466b066c992
+      internalID: -5985799754658513668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hex_r40
+      rect:
+        serializedVersion: 2
+        x: 1795
+        y: 259
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f8bcdb9abb992242a254db74784ba1d
+      internalID: -6943937976581445690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Square_20px
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 3
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac8e7e64e9c15cb45a6400f7deb0c67a
+      internalID: 4347255378572156155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Square_r100_20px
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 3
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2087ca5a22eecc4409b0164e033149ce
+      internalID: -8017746061301548502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Square_r75_20px
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 3
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 191195ad8d3359b4aa5b908de77c47fe
+      internalID: 3612847775659787950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Square_r50_20px
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 3
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2a77210eb1686d4a89ce693bf941a93
+      internalID: 8585446626725173383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Square_r25_20px
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 3
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a8e29b168711984fb8ebeed0694ab26
+      internalID: 3526540563510858685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Square_r15_20px
+      rect:
+        serializedVersion: 2
+        x: 1283
+        y: 3
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 974811152acf94d4992d35d08d2645d4
+      internalID: 7839380650889511482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Triangle_r20_30px
+      rect:
+        serializedVersion: 2
+        x: 1539
+        y: 3
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56b3f2ae6e170ec4792a5b1aafb01ed8
+      internalID: 4905162782247949976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hex_r40_40px
+      rect:
+        serializedVersion: 2
+        x: 1795
+        y: 3
+        width: 250
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7d0ded9664171c439a0a338abba1d9e
+      internalID: -4640890109542372945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: fb5ef70cbde927c40af65ee72239ee0e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
