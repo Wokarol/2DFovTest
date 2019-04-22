@@ -186,3 +186,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 775b9cd4a94fddd4c8b45faeb1c35f7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  visionAngle: 90
+  visionDistance: 5
+  visionMask:
+    serializedVersion: 2
+    m_Bits: 512
