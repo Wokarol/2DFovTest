@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Wokarol
 {
+    /// <summary>
+    /// This class represents a thinking entity inside a gameworld (NPC, Enemies, Player)
+    /// </summary>
     [RequireComponent(typeof(CircleCollider2D))]
     public class Actor : MonoBehaviour, IDetectable
     {

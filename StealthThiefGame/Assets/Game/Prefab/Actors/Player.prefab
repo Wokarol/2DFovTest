@@ -182,8 +182,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1352212208919545968}
+  - component: {fileID: 6734197707536764486}
   - component: {fileID: 1693027301346307047}
   - component: {fileID: 5494875171847702550}
+  - component: {fileID: 1421777635421987301}
+  - component: {fileID: 4010691513697475240}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -206,6 +209,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &6734197707536764486
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352212208919545969}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 6200000, guid: 2390f3fd26290484380d78d0ef9c702c, type: 2}
+  m_Interpolate: 1
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!58 &1693027301346307047
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -234,3 +258,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7dd0cf91266c449955e37bed647e05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1421777635421987301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352212208919545969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0279f49de606b3e43b1fabc51f2fa16c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4010691513697475240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352212208919545969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adaa6b05ee187004a92af96758c4930a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  input: {fileID: 1421777635421987301}
+  speed: 5

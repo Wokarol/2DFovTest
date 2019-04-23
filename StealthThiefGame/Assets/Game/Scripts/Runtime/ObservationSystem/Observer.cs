@@ -9,7 +9,7 @@ namespace Wokarol
     {
         [SerializeField] float visionAngle = 90;
         [SerializeField] float visionDistance = 5;
-        [SerializeField] LayerMask visionMask;
+        [SerializeField] LayerMask visionMask = default;
 
         private void Update() {
             CheckSurrounding();

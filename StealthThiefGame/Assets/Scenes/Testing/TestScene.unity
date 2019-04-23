@@ -410,16 +410,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3620288926870709724, guid: 76796d446fb586e4db6235390aced6de,
-        type: 3}
-      propertyPath: visionAngle
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 3620288926870709724, guid: 76796d446fb586e4db6235390aced6de,
-        type: 3}
-      propertyPath: visionDistance
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 5649956296428709596, guid: 76796d446fb586e4db6235390aced6de,
         type: 3}
       propertyPath: m_Name
@@ -429,6 +419,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3620288926870709724, guid: 76796d446fb586e4db6235390aced6de,
+        type: 3}
+      propertyPath: visionAngle
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 3620288926870709724, guid: 76796d446fb586e4db6235390aced6de,
+        type: 3}
+      propertyPath: visionDistance
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5649956296428709598, guid: 76796d446fb586e4db6235390aced6de,
         type: 3}
@@ -795,16 +795,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3620288926870709724, guid: 76796d446fb586e4db6235390aced6de,
-        type: 3}
-      propertyPath: visionAngle
-      value: 360
-      objectReference: {fileID: 0}
-    - target: {fileID: 3620288926870709724, guid: 76796d446fb586e4db6235390aced6de,
-        type: 3}
-      propertyPath: visionDistance
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 5649956296428709596, guid: 76796d446fb586e4db6235390aced6de,
         type: 3}
       propertyPath: m_Name
@@ -814,6 +804,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3620288926870709724, guid: 76796d446fb586e4db6235390aced6de,
+        type: 3}
+      propertyPath: visionAngle
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 3620288926870709724, guid: 76796d446fb586e4db6235390aced6de,
+        type: 3}
+      propertyPath: visionDistance
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5649956296428709598, guid: 76796d446fb586e4db6235390aced6de,
         type: 3}
@@ -1265,11 +1265,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5494875171847702550, guid: 8f8a5bd9e7d163d4e9752552776b2ae8,
-        type: 3}
-      propertyPath: radius
-      value: 0.44
-      objectReference: {fileID: 0}
     - target: {fileID: 1352212208919545969, guid: 8f8a5bd9e7d163d4e9752552776b2ae8,
         type: 3}
       propertyPath: m_Name
@@ -1330,16 +1325,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1352212208919545968, guid: 8f8a5bd9e7d163d4e9752552776b2ae8,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1352212208919545968, guid: 8f8a5bd9e7d163d4e9752552776b2ae8,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f8a5bd9e7d163d4e9752552776b2ae8, type: 3}
 --- !u!1001 &5649956297964109749
@@ -1349,6 +1334,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5649956296428709596, guid: 76796d446fb586e4db6235390aced6de,
+        type: 3}
+      propertyPath: m_Name
+      value: Observer
+      objectReference: {fileID: 0}
     - target: {fileID: 3620288926870709724, guid: 76796d446fb586e4db6235390aced6de,
         type: 3}
       propertyPath: visionAngle
@@ -1358,11 +1348,6 @@ PrefabInstance:
         type: 3}
       propertyPath: visionDistance
       value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5649956296428709596, guid: 76796d446fb586e4db6235390aced6de,
-        type: 3}
-      propertyPath: m_Name
-      value: Observer
       objectReference: {fileID: 0}
     - target: {fileID: 5649956296428709598, guid: 76796d446fb586e4db6235390aced6de,
         type: 3}
