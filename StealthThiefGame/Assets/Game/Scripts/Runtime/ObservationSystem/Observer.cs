@@ -10,9 +10,14 @@ namespace Wokarol
         [SerializeField] float visionAngle = 90;
         [SerializeField] float visionDistance = 5;
         [SerializeField] LayerMask visionMask = default;
+        [SerializeField] float meshResolution = 10;
 
         private void Update() {
             CheckSurrounding();
+            var points = FOVUtils.GetPointsFromFOV(visionAngle, visionDistance, meshResolution, transform.eulerAngles.z + 90, transform.position, visionMask);
+            foreach (var point in points) {
+                Debug.DrawLine(transform.position, point, Color.red);
+            }
         }
 
         /// <summary>

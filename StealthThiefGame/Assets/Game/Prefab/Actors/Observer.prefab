@@ -191,3 +191,4 @@ MonoBehaviour:
   visionMask:
     serializedVersion: 2
     m_Bits: 512
+  meshResolution: 0.2
