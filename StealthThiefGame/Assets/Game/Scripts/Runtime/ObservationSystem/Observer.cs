@@ -11,13 +11,28 @@ namespace Wokarol
         [SerializeField] float visionDistance = 5;
         [SerializeField] LayerMask visionMask = default;
         [SerializeField] float meshResolution = 10;
+        [SerializeField] int edgeResolveIterations = 6;
+        [SerializeField] float edgeDstThreshold = 0.5f;
+        [Space]
+        [SerializeField] MeshFilter fovMeshFilter;
 
-        private void Update() {
+        Mesh fovMesh;
+
+        private void Start() {
+            fovMesh = new Mesh {
+                name = "FOV Mesh"
+            };
+            fovMeshFilter.mesh = fovMesh;
+        }
+
+        private void LateUpdate() {
             CheckSurrounding();
-            var points = FOVUtils.GetPointsFromFOV(visionAngle, visionDistance, meshResolution, transform.eulerAngles.z + 90, transform.position, visionMask);
-            foreach (var point in points) {
-                Debug.DrawLine(transform.position, point, Color.red);
-            }
+            var points = FOVUtils.GetPointsFromFOV(visionAngle, visionDistance, meshResolution, edgeResolveIterations, edgeDstThreshold,
+                transform.eulerAngles.z + 90, transform.position, visionMask);
+            //foreach (var point in points) {
+            //    Debug.DrawLine(transform.position, point, Color.red);
+            //}
+            MeshCreator.GetIrregularArcFromPoints(ref fovMesh, points, transform);
         }
 
         /// <summary>
