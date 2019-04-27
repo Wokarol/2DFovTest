@@ -1,120 +1,92 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public static class FOVUtils
 {
     /// <summary>
-    /// Gets local points of FOV
+    /// Gets global points of FOV
     /// </summary>
     /// <param name="fovAngle">angle of field of view (degrees)</param>
     /// <param name="fovDistance">distance of field of view</param>
-    /// <param name="resolution">resolution of field of view</param>
+    /// <param name="resolution">Resolution in rays per degree</param>
     /// <param name="offsetAngle">rotation of object in degress (0 means facing right, 90 means up)</param>
     /// <param name="origin">origin of field of view</param>
     /// <returns>list of local points</returns>
-    public static Vector3[] GetPointsFromFOV
-        (float fovAngle, float fovDistance, float resolution, int edgeResolveIterations, float edgeDstThreshold, 
-        float offsetAngle, Vector2 origin, LayerMask mask, bool addOriginInFront = false) 
-    {
+    public static List<Vector3> GetPointsFromFOV (float fovAngle, float fovDistance, float resolution, float offsetAngle, Vector2 origin, LayerMask mask) {
         var results = new List<Vector3>();
-        if (addOriginInFront) results.Add(origin);
+        var arcPoints = GetPointsInArc(fovAngle, fovDistance, offsetAngle, origin, Mathf.RoundToInt(fovAngle * resolution));
+        var corners = GetFilteredPoints(fovAngle, fovDistance, offsetAngle, origin);
+        var forward = Vector2Utils.FromAngle(offsetAngle);
 
-        int stepCount = Mathf.RoundToInt(fovAngle * resolution);
-        float stepAngleSize = fovAngle / stepCount;
+        bool[] arcHits = new bool[arcPoints.Count];
 
-        ViewCastInfo oldCast = new ViewCastInfo();
-
-        for (int i = 0; i <= stepCount; i++) {
-            float angle = offsetAngle - fovAngle / 2 + stepAngleSize * i;
-            ViewCastInfo castInfo = ViewCast(angle, origin, fovDistance, mask);
-
-            if(i > 0) {
-                bool edgeDstThresholdExceeded = Mathf.Abs(castInfo.Distance - oldCast.Distance) > edgeDstThreshold;
-
-                if (oldCast.Hit != castInfo.Hit || (oldCast.Hit && castInfo.Hit && edgeDstThresholdExceeded)) {
-                    EdgeInfo edge = FindEdge(oldCast, castInfo, edgeResolveIterations, edgeDstThreshold, origin, fovDistance, mask);
-                    if (edge.PointA != Vector3.zero) results.Add(edge.PointA);
-                    if (edge.PointB != Vector3.zero) results.Add(edge.PointB);
-                }
-            }
-
-            results.Add(castInfo.Point);
-            oldCast = castInfo;
+        // Getting all points along the ray
+        for (int i = 0; i < arcPoints.Count; i++) {
+            Vector2 p = arcPoints[i];
+            results.Add(Raycast(origin, (p - origin).normalized, fovDistance, mask, out bool hitted));
+            arcHits[i] = hitted;
         }
 
-        return results.ToArray();
-    }
-
-    static EdgeInfo FindEdge(ViewCastInfo min, ViewCastInfo max, int edgeResolveIterations, float edgeDstThreshold, Vector2 origin, float fovRadius, LayerMask mask) {
-        float minAngle = min.Angle; // in degrees
-        float maxAngle = max.Angle; // in degrees
-
-        Vector3 minPoint = Vector3.zero;
-        Vector3 maxPoint = Vector3.zero;
-
-        for (int i = 0; i < edgeResolveIterations; i++) {
-            float angle = (minAngle + maxAngle) * .5f;
-            ViewCastInfo castInfo = ViewCast(angle, origin, fovRadius, mask);
-
-            bool edgeDstThresholdExceeded = Mathf.Abs(castInfo.Distance - min.Distance) > edgeDstThreshold;
-            if (castInfo.Hit == min.Hit && !edgeDstThresholdExceeded) {
-                minAngle = angle;
-                minPoint = castInfo.Point;
-            } else {
-                maxAngle = angle;
-                maxPoint = castInfo.Point;
-            }
+        // Getting all points for corners
+        foreach (var c in corners) {
+            Vector2 dir = (c - origin).normalized;
+            AddByAngle(origin, forward, results, Raycast(origin, Quaternion.Euler(0, 0, 0.05f) * dir, fovDistance, mask, out bool hitted));
+            AddByAngle(origin, forward, results, Raycast(origin, dir, fovDistance, mask, out hitted));
+            AddByAngle(origin, forward, results, Raycast(origin, Quaternion.Euler(0, 0, -0.05f) * dir, fovDistance, mask, out hitted));
         }
 
-        return new EdgeInfo(minPoint, maxPoint);
+        return results;
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="angle">global angle (in degrees)</param>
-    /// <returns></returns>
-    static ViewCastInfo ViewCast(float angle, Vector2 origin, float fovRadius, LayerMask mask) {
-        Vector2 dir = Vector2Utils.FromAngle(angle * Mathf.Deg2Rad);
-        var hit = Physics2D.Raycast(origin, dir, fovRadius, mask);
-
-        if(hit.transform != null) {
-            return new ViewCastInfo(true, hit.point, hit.distance, angle);
+    private static Vector2 Raycast(Vector2 origin, Vector2 dir, float distance, LayerMask mask, out bool hitted) {
+        RaycastHit2D hit = Physics2D.Raycast(origin, dir, distance, mask);
+        hitted = hit.transform != null;
+        if (hit.transform != null) {
+            return hit.point;
         } else {
-            return new ViewCastInfo(false, origin + dir * fovRadius, fovRadius, angle);
+            return dir * distance + origin;
         }
+        
     }
 
-    public struct EdgeInfo
-    {
-        public readonly Vector3 PointA;
-        public readonly Vector3 PointB;
+    public static List<Vector2> GetFilteredPoints(float fovAngle, float fovDistance, float offsetAngle, Vector2 origin) {
+        var results = new List<Vector2>();
+        var forward = Vector2Utils.FromAngle(offsetAngle);
+        float distanceSqr = fovDistance * fovDistance;
+        float halfAngle = fovAngle * 0.5f;
 
-        public EdgeInfo(Vector3 pointA, Vector3 pointB) {
-            PointA = pointA;
-            PointB = pointB;
+        foreach (var p in ObstacleManager.Corners) {
+            Vector2 direction = (p - origin);
+            if (Vector2.Angle(direction, forward) < halfAngle && direction.sqrMagnitude < distanceSqr)
+                results.Add(p);
         }
+
+        return results;
     }
 
-    public struct ViewCastInfo
-    {
-        public readonly bool Hit;
-        /// <summary>
-        /// Global hit point
-        /// </summary>
-        public readonly Vector2 Point;
-        public readonly float Distance;
-        /// <summary>
-        /// (in degrees)
-        /// </summary>
-        public readonly float Angle;
+    public static List<Vector2> GetPointsInArc(float fovAngle, float fovDistance, float offsetAngle, Vector2 origin, int resolution) {
+        var results = new List<Vector2>();
+        float startAngle = offsetAngle + fovAngle * 0.5f;
 
-        public ViewCastInfo(bool hit, Vector2 point, float distance, float angle) {
-            Hit = hit;
-            Point = point;
-            Distance = distance;
-            Angle = angle;
+        for (int i = 0; i <= resolution; i++) {
+            float angle = startAngle - i * (fovAngle / resolution);
+            results.Add(Vector2Utils.FromAngle(angle) * fovDistance + origin);
+        }
+
+        return results;
+    }
+
+    private static void AddByAngle(Vector3 origin, Vector3 middle, List<Vector3> list, Vector3 v) {
+        float myAngle = Vector2.SignedAngle(v - origin, middle);
+        for (int i = 0; i < list.Count; i++) {
+            float prevAngle = Vector2.SignedAngle(list[i] - origin, middle);
+            if(myAngle <= prevAngle) {
+                list.Insert(i, v);
+                return;
+            }
         }
     }
 }

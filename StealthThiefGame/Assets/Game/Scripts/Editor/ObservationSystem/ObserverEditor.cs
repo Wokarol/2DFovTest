@@ -14,10 +14,7 @@ namespace Wokarol
         private PropertyInfo radius;
 
         private void OnEnable() {
-        }
-
-        public override void OnInspectorGUI() {
-            base.OnInspectorGUI();
+            ObstacleManager.ForceObstacleRefresh();
         }
 
         private void OnSceneGUI() {
@@ -26,30 +23,26 @@ namespace Wokarol
 
             float angle = serializedObserver.FindProperty("visionAngle").floatValue;
             float radius = serializedObserver.FindProperty("visionDistance").floatValue;
-            float resolution = serializedObserver.FindProperty("meshResolution").floatValue;
+            float resolution = serializedObserver.FindProperty("resolution").floatValue;
             LayerMask mask = serializedObserver.FindProperty("visionMask").intValue;
 
-            int edgeResolveIterations = serializedObserver.FindProperty("edgeResolveIterations").intValue;
-            float edgeDstThreshold = serializedObserver.FindProperty("edgeDstThreshold").floatValue;
 
-            var points = FOVUtils.GetPointsFromFOV(
-                angle,
-                radius,
-                resolution,
-                edgeResolveIterations,
-                edgeDstThreshold,
-                observer.transform.eulerAngles.z + 90,
-                observer.transform.position,
-                mask,
-                true);
+            var points = FOVUtils.GetPointsFromFOV(angle, radius, resolution, (observer.transform.eulerAngles.z + 90) % 360, observer.transform.position, mask);
 
-            //Handles.color = Color.blue;
-            //foreach (var point in points) {
-            //    Handles.DrawLine(observer.transform.position, point);
-            //}
+            if (angle != 360) {
+                points.Insert(0, observer.transform.position);
+                points.Add(observer.transform.position);
+            }
+            Handles.color = new Color(147 / 256, 188 / 256, 1, 1);
+            Handles.DrawAAPolyLine(3, points.ToArray());
 
-            Handles.color = new Color(147 / 256, 188 / 256, 1, 0.3f);
-            Handles.DrawAAConvexPolygon(points);
+
+            if (angle == 360) {
+                points.Add(observer.transform.position); 
+            }
+            Handles.color = new Color(147 / 256, 188 / 256, 1, 0.2f);
+            Handles.DrawAAConvexPolygon(points.ToArray());
+
         }
-    } 
+    }
 }

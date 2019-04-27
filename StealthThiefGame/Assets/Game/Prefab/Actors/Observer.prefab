@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 49357370551953828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5649956296428709598}
   m_RootOrder: 1
@@ -266,8 +266,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visionAngle: 90
   visionDistance: 5
+  resolution: 1
   visionMask:
     serializedVersion: 2
     m_Bits: 512
-  meshResolution: 0.2
   fovMeshFilter: {fileID: 4274739210433337325}
