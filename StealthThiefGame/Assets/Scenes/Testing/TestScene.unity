@@ -1552,20 +1552,15 @@ PrefabInstance:
       propertyPath: edgeResolveIterations
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 3620288926870709724, guid: 76796d446fb586e4db6235390aced6de,
-        type: 3}
-      propertyPath: resolution
-      value: 0.25
-      objectReference: {fileID: 0}
     - target: {fileID: 5649956296428709598, guid: 76796d446fb586e4db6235390aced6de,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.83
+      value: -7.92
       objectReference: {fileID: 0}
     - target: {fileID: 5649956296428709598, guid: 76796d446fb586e4db6235390aced6de,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.89
+      value: -3.7
       objectReference: {fileID: 0}
     - target: {fileID: 5649956296428709598, guid: 76796d446fb586e4db6235390aced6de,
         type: 3}

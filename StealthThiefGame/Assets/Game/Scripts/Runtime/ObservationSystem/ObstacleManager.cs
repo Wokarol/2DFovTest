@@ -1,13 +1,20 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 public static class ObstacleManager
 {
+    static string Filename => SceneManager.GetActiveScene().name + "_corners";
+
     static long lastSession = 0;
 
     static List<Vector2> corners = new List<Vector2>();
@@ -15,28 +22,52 @@ public static class ObstacleManager
         get {
             if ((Application.isPlaying && lastSession != AnalyticsSessionInfo.sessionId)) {
                 lastSession = AnalyticsSessionInfo.sessionId;
-                ForceObstacleRefresh();
+                GetCornersFromFile();
             }
             return corners;
         }
     }
 
+#if UNITY_EDITOR
+    public static void RebuildCorners() {
+        ForceObstacleRefresh();
+        SaveCornersToFile();
+    }
 
+    private static void SaveCornersToFile() {
+        var filename = Filename;
+        var file = new SavedCorners(corners);
+        var json = JsonUtility.ToJson(file);
+
+        string directory = Path.Combine(Application.dataPath, "Resources", "Corners");
+        string path = Path.Combine(directory, filename + ".txt");
+
+        if (!Directory.Exists(directory))
+            Directory.CreateDirectory(directory);
+
+        File.WriteAllText(path, json);
+
+        AssetDatabase.Refresh();
+    } 
+#endif
+
+    private static void GetCornersFromFile() {
+        corners.Clear();
+        var filename = "Corners/" + Filename;
+        TextAsset asset = Resources.Load<TextAsset>(filename);
+
+        var json = asset.text;
+        corners = JsonUtility.FromJson<SavedCorners>(json).Corners;
+    }
 
     //[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     public static void ForceObstacleRefresh() {
-        Debug.Log($"Refreshed obstacles for session {lastSession} and scene {SceneManager.GetActiveScene().buildIndex}");
-
         var colliders = UnityEngine.Object.FindObjectsOfType<Collider2D>().Where(c => c.gameObject.isStatic).ToArray();
         corners.Clear();
 
         foreach (var c in colliders) {
-            Debug.Log($"Adding for {c.name}");
             corners.AddRange(GetCorners(c));
         }
-
-        Debug.Log(colliders.Length);
-        Debug.Log(UnityEngine.Object.FindObjectsOfType<Collider2D>().Length);
     }
 
     private static Vector2[] GetCorners(Collider2D c) {
@@ -60,5 +91,14 @@ public static class ObstacleManager
         }
 
         return new Vector2[0];
+    }
+
+    private struct SavedCorners
+    {
+        public List<Vector2> Corners;
+
+        public SavedCorners(List<Vector2> corners) {
+            Corners = corners;
+        }
     }
 }

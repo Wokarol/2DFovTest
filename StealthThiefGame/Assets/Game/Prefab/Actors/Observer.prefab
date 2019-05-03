@@ -266,7 +266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visionAngle: 90
   visionDistance: 5
-  resolution: 0.2
+  resolution: 0.5
   visionMask:
     serializedVersion: 2
     m_Bits: 512
