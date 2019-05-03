@@ -13,7 +13,7 @@ public static class ObstacleManager
     static List<Vector2> corners = new List<Vector2>();
     public static IReadOnlyList<Vector2> Corners {
         get {
-            if ((Application.isPlaying && lastSession != AnalyticsSessionInfo.sessionId) || true) {
+            if ((Application.isPlaying && lastSession != AnalyticsSessionInfo.sessionId)) {
                 lastSession = AnalyticsSessionInfo.sessionId;
                 ForceObstacleRefresh();
             }
@@ -31,6 +31,7 @@ public static class ObstacleManager
         corners.Clear();
 
         foreach (var c in colliders) {
+            Debug.Log($"Adding for {c.name}");
             corners.AddRange(GetCorners(c));
         }
 
@@ -47,6 +48,15 @@ public static class ObstacleManager
                 box.transform.TransformPoint(new Vector3( size.x, -size.y)),
                 box.transform.TransformPoint(new Vector3(-size.x, -size.y))
             };
+        }
+        if(c is CircleCollider2D circle) {
+            float radius = circle.radius;
+            var results = new List<Vector2>();
+            for (int i = 0; i < 360; i += 10) {
+                results.Add(circle.transform.TransformPoint(Vector2Utils.FromAngle(i) * radius));
+                //Debug.DrawLine(Vector3.zero, Vector2Utils.FromAngle(i) * radius, Color.white, 20f);
+            }
+            return results.ToArray();
         }
 
         return new Vector2[0];
